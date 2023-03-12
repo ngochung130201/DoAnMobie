@@ -68,7 +68,10 @@
             ]
           },
           "configurations": {
+
             "production": {
+              "buildOptimizer": false,
+              "optimization": false,
               "budgets": [
                 {
                   "type": "initial",
@@ -104,6 +107,7 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+
               "browserTarget": "DoAnPC:build:production"
             },
             "development": {
