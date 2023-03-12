@@ -1,0 +1,70 @@
+<app-header-admin></app-header-admin>
+<div class="pt-20">
+
+  <div id="main-content" class=" bg-gray-50 relative overflow-y-auto lg:ml-64">
+    <main>
+      <!-- component -->
+      <div class="flex items-center justify-center  px-5">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="mx-auto w-full ">
+          <form action="https://formbold.com/s/FORM_ID" method="POST" [formGroup]="suppliersFormCreate" method="POST"
+            (ngSubmit)="handleCreate()">
+            <div class="mb-5">
+              <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                Tên nhà cung cấp
+              </label>
+              <input type="text" formControlName="name" name="name" id="name" placeholder="Tên cung cấp"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+              <div class="text-red-500 m-2" *ngIf="suppliersFormCreate.controls['name'].errors">Trường này bắt
+                buộc
+                nhập</div>
+            </div>
+            <div class="mb-5">
+              <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                Email
+              </label>
+              <input type="email" formControlName="email" name="email" id="email" placeholder="Email"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+              <div class="text-red-500 m-2" *ngIf="suppliersFormCreate.controls['email'].errors">Vui lòng nhập đúng định
+                dạng email</div>
+            </div>
+            <div class="mb-5">
+              <label for="phone" class="mb-3 block text-base font-medium text-[#07074D]">
+                Số điện thoại
+              </label>
+              <input type="text" formControlName="phone" name="phone" id="phone" placeholder="Tên cung cấp"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+              <div class="text-red-500 m-2" *ngIf="suppliersFormCreate.controls['phone'].errors">Số điện thoại gồm 10
+                chữ số bắt đầu bằng 0</div>
+              <div class="text-red-500 m-2" *ngIf="errorPhone !== ''">Số điện thoại gồm 10 chữ số bắt đầu bằng 0</div>
+
+            </div>
+            <div class="mb-5">
+              <label for="address" class="mb-3 block text-base font-medium text-[#07074D]">
+                Địa chỉ
+              </label>
+              <input type="text" formControlName="address" name="address" id="address" placeholder="Tên cung cấp"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div>
+
+              <a routerLink="/admin/suppliers" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-green-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Quay
+                lại</a>
+
+              <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-blue-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg cursor-pointer transition duration-150 ease-in-out">Tạo
+                mới</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <app-footer-admin></app-footer-admin>
+    </main>
+  </div>
+</div>
+<app-sidebar-admin></app-sidebar-admin>

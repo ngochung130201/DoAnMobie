@@ -1,0 +1,143 @@
+<app-header-admin></app-header-admin>
+<div class="pt-20">
+
+  <div id="main-content" class=" bg-gray-50 relative overflow-y-auto lg:ml-64">
+    <main>
+      <div>Thêm mới sản phẩm</div>
+      <!-- component -->
+      <div class="flex items-center justify-center  px-5">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="mx-auto w-full ">
+          <form [formGroup]="productFormCreate" (ngSubmit)="OnCreate()">
+            <div class="mb-5">
+              <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                Tên sản phẩm
+              </label>
+              <input type="text" formControlName="name" name="name" id="name" placeholder="Tên sản phẩm"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                Hình ảnh
+              </label>
+              <input type="text" name="name" id="name" formControlName="image" placeholder="Tên sản phẩm"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="quantity" class="mb-3 block text-base font-medium text-[#07074D]">
+                Số lượng
+              </label>
+              <input type="number" formControlName="quantity" name="quantity" id="quantity" placeholder="Số lượng"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                Giá gốc
+              </label>
+              <input type="number" formControlName="price" name="price" id="price" placeholder="Giá"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                Phần trăm giảm giá
+              </label>
+              <input type="number" formControlName="percentPrice" name="percentPrice" id="percentPrice"
+                placeholder="Phần trăm giảm giá"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="promotionPrice" class="mb-3 block text-base font-medium text-[#07074D]">
+                Giá khuyến mãi
+              </label>
+              <input type="number" formControlName="promotionPrice" name="promotionPrice" id="promotionPrice"
+                placeholder="Giá"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5 flex gap-x-8">
+              <div class="">
+                <label for="cateID" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Danh mục
+                </label>
+                <mat-form-field appearance="fill">
+                  <mat-label>Chọn danh mục</mat-label>
+                  <mat-select disableRipple formControlName="cateID">
+                    <mat-option *ngFor="let cate of listCates" [value]="cate.cateID">{{cate.name}}</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="">
+                <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Nhà cung cấp
+                </label>
+                <mat-form-field appearance="fill">
+                  <mat-label>Chọn nhà cung cấp</mat-label>
+                  <mat-select disableRipple formControlName="supplierid">
+                    <mat-option *ngFor="let supplier of listSuppliers"
+                      [value]="supplier.supplierID">{{supplier.name}}</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="">
+                <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                  Thương hiệu
+                </label>
+                <mat-form-field appearance="fill">
+                  <mat-label>Chọn thương hiệu</mat-label>
+                  <mat-select disableRipple formControlName="brandID">
+                    <mat-option *ngFor="let brand of listBrands" [value]="brand.brandID">{{brand.name}}</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="mb-5">
+              <mat-checkbox formControlName="isFreeship" class="example-margin">FreeShip</mat-checkbox>
+            </div>
+            <div class="mb-5">
+              <label for="description" class="mb-3 block text-base font-medium text-[#07074D]">
+                Chi tiết sản phẩm
+              </label>
+              <textarea rows="4" formControlName="description" name="description" id="description"
+                placeholder="Chi tiết sản phẩm"
+                class="w-full resize-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"></textarea>
+            </div>
+            <div class="mb-5">
+              <label for="message" class="mb-3 block text-base font-medium text-[#07074D]">
+                MetaKeyword
+              </label>
+              <input type="text" formControlName="metaKeyword" name="metaKeyword" id="metaKeyword"
+                placeholder="MetaKeyword"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="message" class="mb-3 block text-base font-medium text-[#07074D]">
+                MetaDescription
+              </label>
+              <input type="text" formControlName="metaDescription" name="promotionPrice" id="metaDescription"
+                placeholder="metaDescription"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div>
+
+              <a routerLink="/admin/product" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-green-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Quay
+                lại</a>
+
+              <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-blue-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg cursor-pointer transition duration-150 ease-in-out">Tạo
+                mới</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <app-footer-admin></app-footer-admin>
+    </main>
+  </div>
+</div>
+<app-sidebar-admin></app-sidebar-admin>

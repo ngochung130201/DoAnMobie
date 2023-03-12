@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="px-2 py-2 mt-12 pt-40 lg:px-[9rem]">
+  <swiper class=" showNavigator" (swiper)="setSwiperInstance($event)" [slidesPerView]="1" [navigation]="true"
+    [scrollbar]=" { draggable: true }" [pagination]="{ clickable: true } " [loop]="true">
+    <ng-template swiperSlide *ngFor="let image of images">
+      <img [src]="image.url" alt="" class="swiper-img">
+    </ng-template>
+
+  </swiper>
+  <div class="mt-10">
+    <div class="flex justify-center font-bold text-3xl">
+      KHUYẾN MÃI HOT
+    </div>
+    <div class=" ">
+      <!-- Header -->
+
+
+      <section class="min-h-screen body-font text-gray-600 ">
+        <div class="container mx-auto px-5 py-10">
+          <div class="-m-4 flex flex-wrap">
+
+            <div class="w-full p-4 md:w-1/2 lg:w-1/2 shadow-lg rounded-md " *ngFor="let Promo of listPromo">
+              <a class="relative block h-48  rounded">
+                <img alt="ecommerce" class="block h-full w-full object-cover  cursor-pointer" [src]="Promo.image" />
+              </a>
+              <div class="mt-4">
+
+                <h2 class="title-font text-lg font-medium text-gray-900">{{Promo.name}}</h2>
+                <p class="mt-1">{{Promo.createDate}}</p>
+              </div>
+              <div class="flex justify-end">
+                <a href="/" class=" px-2 py-3 bg-color-primary rounded-sm text-white">Xem chi tiết</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

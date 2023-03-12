@@ -1,0 +1,114 @@
+<app-header-admin></app-header-admin>
+<div class="pt-20">
+
+  <div id="main-content" class=" bg-gray-50 relative overflow-y-auto lg:ml-64">
+    <main>
+
+      <!-- Breadcrumb -->
+
+      <nav class="flex px-5 mt-5 mb-5" aria-label="Breadcrumb">
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="inline-flex items-center">
+            <a href="#"
+              class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+              <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z">
+                </path>
+              </svg>
+              Dashborad
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <a href="#"
+                class="ml-1 text-sm font-medium text-gray-700 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Banner</a>
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Tạo mới </span>
+            </div>
+          </li>
+        </ol>
+      </nav>
+
+
+
+
+      <!-- component -->
+      <div class="flex items-center justify-center  px-5">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+        <div class="mx-auto w-full ">
+          <form action="" [formGroup]="BannerFormCreate" method="POST" (ngSubmit)="handleCreate()">
+            <div class="mb-5">
+              <label for="name" class="mb-3 block text-base font-medium text-[#07074D]">
+                Tên Banner
+              </label>
+              <input type="text" name="name" id="name" formControlName="name" placeholder="Tên Banner"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="image" class="mb-3 block text-base font-medium text-[#07074D]">
+                Image
+              </label>
+              <input type="text" name="name" id="name" formControlName="image" placeholder="Tên Banner"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="image" class="mb-3 block text-base font-medium text-[#07074D]">
+                Image
+              </label>
+              <input type="file" name="name" id="name" formControlName="fileImages" placeholder="Tên Banner"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="email" class="mb-3 block text-base font-medium text-[#07074D]">
+                Đường dẫn
+              </label>
+              <input type="text" formControlName="link" name="link" id="link" placeholder="Đường dẫn"
+                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
+            </div>
+            <div class="mb-5">
+              <label for="subject" class="mb-3 block text-base font-medium text-[#07074D]">
+                Trạng thái
+              </label>
+              <input id="link-checkbox" type="checkbox" value="" formControlName="isStatus"
+                class="w-4 h-4 text-blue-600 ml-5 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            </div>
+
+            <div>
+
+              <a routerLink="/admin/product" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-green-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Quay
+                lại</a>
+
+              <button type="submit" data-mdb-ripple="true" data-mdb-ripple-color="light"
+                class="inline-block py-3 px-8 mr-2 bg-blue-600 cursor-pointer text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg cursor-pointer transition duration-150 ease-in-out">Tạo
+                mới</button>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+      <app-footer-admin></app-footer-admin>
+    </main>
+  </div>
+</div>
+<app-sidebar-admin></app-sidebar-admin>

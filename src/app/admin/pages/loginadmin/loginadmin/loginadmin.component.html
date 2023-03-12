@@ -1,0 +1,40 @@
+<div class="flex justify-center pt-8 flex-col items-center ">
+  <div class="mb-8">
+    <img class="w-16 " src="https://nhatrangsilicone.vn/assets/img/duyen-chau-logo.png" alt="">
+  </div>
+  <div class="w-[500px] border-t-2 border-solid border-[#3F51B5] rounded-sm shadow-md px-6 py-4">
+    <span class="mb-10 block text-[#444444] text-base capitalize font-bold">Đăng Nhập Hệ Thống</span>
+    <form action="" [formGroup]="formLogin" (ngSubmit)="OnLogin()">
+
+      <div class="example-container flex flex-col justify-center ">
+        <label for="" class="text-[#34395e] mb-2 text-xs font-semibold ">Tên tài khoản</label>
+        <mat-form-field class="w-[440px]  " appearance="outline">
+          <mat-label>Tên tài khoản</mat-label>
+          <input autofocus class="outline-custom" matInput placeholder="hungIT@gmail.com" formControlName="name"
+            required>
+
+        </mat-form-field>
+        <div class="flex justify-between">
+          <label for="" class="text-[#34395e] mb-2 text-xs font-semibold">Mật khẩu</label>
+          <a class="text-[#3F51B5] text-xs font-medium" href="">Quên mật khẩu</a>
+        </div>
+        <mat-form-field class=" overflow-hidden" appearance="outline">
+          <mat-label>Mật khẩu</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+          </button>
+
+        </mat-form-field>
+        <mat-checkbox color="primary" class="example-margin">Nhớ mật khẩu lần sau</mat-checkbox>
+        <div class="py-7">
+          <button class="w-full" mat-flat-button color="primary">Đăng nhập</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>

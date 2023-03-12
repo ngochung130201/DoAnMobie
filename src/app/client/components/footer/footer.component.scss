@@ -1,0 +1,9 @@
+.title-footer {
+  @apply text-color-main text-sm font-bold;
+}
+.link-footer {
+  @apply text-left text-xs text-color-main leading-4;
+}
+.link-footer:hover {
+  @apply text-[#024dbc] transition-all ease-in-out delay-150;
+}

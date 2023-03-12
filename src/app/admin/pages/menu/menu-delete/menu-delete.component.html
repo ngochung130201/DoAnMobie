@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Xóa sản phẩm </h1>
+<div mat-dialog-content>
+  Bạn có chắc muốn xóa {{data.name}}
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancle</button>
+  <button mat-button mat-dialog-close cdkFocusInitial (click)=" handleDelete()">Ok</button>
+</div>

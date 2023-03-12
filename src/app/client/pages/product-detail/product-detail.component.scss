@@ -1,0 +1,34 @@
+@import '../../../app.component.scss';
+
+
+.swiper {
+  width: 100%;
+
+}
+.swiper-button-prev{
+  opacity: 0 !important;
+}
+.swiper-button-next {
+
+  opacity: 0
+}
+
+.showNavigator:hover {
+  .swiper-button-prev{
+    transition: all ease-in 0.3s;
+    opacity: 1 !important;
+  }
+  .swiper-button-next {
+    transition: all ease-in 0.3s;
+    opacity: 1
+  }
+
+}
+.btn-product {
+  @apply uppercase text-center h-[3rem] w-[15rem] rounded-md font-medium
+}
+.w-product {
+  width: 100%;
+  height: 100%;
+  max-width: 327px;
+}
