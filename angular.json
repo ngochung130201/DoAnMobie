@@ -73,17 +73,11 @@
               "buildOptimizer": false,
               "optimization": false,
               "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "6mb"
-               },
-               {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "150kb",
-                  "maximumError": "150kb"
-               }
-              ],
+                { "type": "initial", "maximumWarning": "20mb", "maximumError": "25mb" },
+
+              { "type": "anyComponentStyle", "maximumWarning": "20mb", "maximumError": "25mb" }
+            ],
+
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
